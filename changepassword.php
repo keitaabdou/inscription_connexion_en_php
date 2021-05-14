@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    error_reporting(0);
+    include_once('config/db.php');
+
+?>
+
 <!DOCTYPE html>
     <html lang="fr">
         <head>
@@ -14,24 +21,26 @@
         </head>
         <body>
             <div class="signup-form">
-                <form action="fonction/traitement_connexion.php" method="post" name="submit">
-                    <h2>CONNEXION</h2>
+                <form action="fonction/changement_pass.php" method="post" onSubmit="return valid();" name="chngpwd" >
+                    <h3>Modification du Mot de Passe</h3>
+                    <p style="color:red;"><?php echo $_SESSION['msg1'];?><?php echo $_SESSION['msg1']="";?></p>
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col"><input type="text" class="form-control" name="emailmobile" placeholder="Adresse e-mail ou Mobile" required></div>
+                        <input type="password" class="form-control" name="o_password" id="opwd" placeholder="Ancien mot de passe">
                             <!-- <div class="col"><input type="text" class="form-control" name="prenom" placeholder="Entrez votre Prénom" required></div> -->
-                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="motpasse" class="form-control" placeholder="Entrez votre Mot de passe" required>
+                        <input type="password" class="form-control" name="n_password" id="npwd" placeholder="Nouveau mot de passe" >
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">
+                        <input type="password" name="r_password" id="cpwd" class="form-control" placeholder="Confirmez le mot de passe">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" name="subpass">
                             Valider
                         </button>
                     </div>
                 </form>
-                <div class="text-center">Vous n'avez pas de compte? <a href="inscription.php">CRÉER UN COMPTE</a></div>
             </div>
     </body>
+    <!-- <script src="js/script.js"></script> -->
 </html>

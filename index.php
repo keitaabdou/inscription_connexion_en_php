@@ -55,6 +55,7 @@ include_once('config/db.php');
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fa fa-user-circle-o" aria-hidden="true"></i>  <?php echo $_SESSION['nom'];?></a>
                             <div class="dropdown-menu bg-dark mt-2" style="left:-80px;">
                                 <a class="dropdown-item bg-dark text-white" href="deconnexion.php">Déconnexion</a>
+                                <a class="dropdown-item bg-dark text-white" href="changepassword.php">Changer Mote de passe</a>
                             </div>
                             <?php
                          }
